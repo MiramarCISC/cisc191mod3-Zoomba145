@@ -10,6 +10,7 @@ class Circle extends Shape implements Measurable {
 
     @Override
     public boolean equals(Object other){
+        //Could combine all of these if-statements into one using else if and else.
         if((other instanceof Circle) == false){
             return false;
         }
@@ -26,6 +27,13 @@ class Circle extends Shape implements Measurable {
     public Circle(String name, double radius) {
         super(name);
         this.radius = radius;
+
+        //Check if object created is valid:
+        if (radius <= 0 ) {
+            throw new IllegalArgumentException("Radius must be bigger than 0");
+        } else if (name.isBlank()) {
+            throw new IllegalArgumentException("Invalid name");
+        }
     }
 
     @Override
