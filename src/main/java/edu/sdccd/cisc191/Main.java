@@ -18,5 +18,17 @@ public class Main {
         shapes.sort(Comparator.comparingDouble(Shape::area));
         System.out.println("Sorted by area:");
         shapes.forEach(System.out::println);
+
+        /*
+        * You forgot to add the demonstration of the equals comparison.
+        * You should implement something like this:
+        */
+
+        Rectangle first = new Rectangle("same",2, 3);
+        Rectangle second = new Rectangle("same",2, 3);
+        Rectangle third = new Rectangle("different",8, 9);
+        System.out.println(first.equals(second));
+        System.out.println(second.equals(first));
+        System.out.println(second.equals(third));
     }
 }
